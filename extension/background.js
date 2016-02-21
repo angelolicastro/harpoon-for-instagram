@@ -10,6 +10,8 @@
     chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         if (/http(s)?:\/\/(www\.)?instagram\.com\/p\/.+/.test(tab.url)) {
             chrome.pageAction.show(tab.id);
+        } else {
+            chrome.pageAction.hide(tab.id);
         }
     });
 
